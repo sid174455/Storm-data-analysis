@@ -1,0 +1,171 @@
+KKNN Results
+
+Distance = 1
+
+> mse <- mean((kknn.model0$fitted.values != kknn.test[, "DAMAGE_PROPERTY"]) ^ 2)
+> mse
+[1] 0.002365082778
+        
+          Low Medium High
+  Low    4633      0    0
+  Medium   11      7    0
+  High      0      0    0
+  
+
+> mse <- mean((kknn.model1$fitted.values != kknn.test[, "DAMAGE_CROPS"]) ^ 2)
+> mse
+[1] 0.0006450225758
+
+        
+          Low Medium High
+  Low    4647      0    0
+  Medium    3      1    0
+  High      0      0    0
+
+> mse <- mean((kknn.model2$fitted.values != kknn.test[, "INJURIES"]) ^ 2)
+> mse
+[1] 0.004945173081
+
+       Yes   No
+  Yes    1   19
+  No     4 4627
+
+> mse <- mean((kknn.model3$fitted.values != kknn.test[, "DEATHS"]) ^ 2)
+> mse
+[1] 0.003010105354
+
+       Yes   No
+  Yes    0   14
+  No     0 4637
+  
+  
+Distance = 2
+
+> mse
+[1] 0.002365082778
+
+          Low Medium High
+  Low    4633      0    0
+  Medium   11      7    0
+  High      0      0    0
+
+> mse
+[1] 0.0006450225758
+
+          Low Medium High
+  Low    4647      0    0
+  Medium    3      1    0
+  High      0      0    0
+
+> mse
+[1] 0.004300150505
+
+       Yes   No
+  Yes    0   20
+  No     0 4631
+
+> mse
+[1] 0.003225112879
+
+       Yes   No
+  Yes    0   14
+  No     1 4636
+
+
+Kernel = triangular
+
+> mse
+[1] 0.002580090303
+
+    Low Medium High
+  Low    4632      1    0
+  Medium   11      7    0
+  High      0      0    0
+
+> mse
+[1] 0.0006450225758
+
+          Low Medium High
+  Low    4647      0    0
+  Medium    3      1    0
+  High      0      0    0
+
+> mse
+[1] 0.005590195657
+
+       Yes   No
+  Yes    1   19
+  No     7 4624
+
+> mse
+[1] 0.003225112879
+
+     
+       Yes   No
+  Yes    0   14
+  No     1 4636
+
+Kernel = optimal
+
+> mse
+[1] 0.002365082778
+ 
+          Low Medium High
+  Low    4633      0    0
+  Medium   11      7    0
+  High      0      0    0
+
+> mse
+[1] 0.0006450225758
+
+          Low Medium High
+  Low    4647      0    0
+  Medium    3      1    0
+  High      0      0    0
+
+> mse
+[1] 0.004945173081
+
+       Yes   No
+  Yes    1   19
+  No     4 4627
+
+> mse
+[1] 0.003010105354
+
+       Yes   No
+  Yes    0   14
+  No     0 4637
+  
+Kernel= "rectangular"
+
+> mse
+[1] 0.002365082778
+   
+          Low Medium High
+  Low    4633      0    0
+  Medium   11      7    0
+  High      0      0    0
+
+> mse
+[1] 0.0008600301011
+
+          Low Medium High
+  Low    4647      0    0
+  Medium    4      0    0
+  High      0      0    0
+
+> mse
+[1] 0.004300150505
+
+     
+       Yes   No
+  Yes    0   20
+  No     0 4631
+
+> mse
+[1] 0.003010105354
+
+       Yes   No
+  Yes    0   14
+  No     0 4637
